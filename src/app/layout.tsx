@@ -1,3 +1,4 @@
+import Header from "@/components/organisms/Header/Header";
 import "../styles/globals.css";
 import Head from "./head";
 
@@ -9,7 +10,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head />
-      <body>{children}</body>
+
+      <body>
+        {" "}
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
