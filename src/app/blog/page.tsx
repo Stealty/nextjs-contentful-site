@@ -1,3 +1,4 @@
+import Header from "@/components/organisms/Header/Header";
 import { createClient } from "contentful";
 
 export default async function Page() {
@@ -8,5 +9,9 @@ export default async function Page() {
 
   const product = await client.getEntries("post");
   console.log(product);
-  return <h1>Blog</h1>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }

@@ -1,0 +1,26 @@
+.Menu__button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.295743);
+  background-color: transparent;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 16px;
+  transition: 0.4s ease-in-out;
+}
+
+.Menu__button:hover {
+  background-color: var(--text-dark-accent);
+  border-radius: 6px;
+  transition: 0.4s ease-in-out;
+  transform: rotate(90deg);
+}
+
+.Menu__bar {
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  width: 16px;
+}
