@@ -1,13 +1,16 @@
 "use client";
 
 import styles from "./Navigation.module.css";
-import HamburguerMenu from "../HamburguerMenu/HamburguerMenu";
 import Link from "next/link";
-import Button from "@/components/atoms/Button/Button";
-import { useCallback, useEffect, useState } from "react";
+import Button from "../../atoms/Button/Button";
+import { useEffect, useState } from "react";
+import MobileMenuButton from "@/components/molecules/MobileMenuButton/MobileMenuButton";
 
-export default function Navigation() {
-  const linkToPages = ["about", "services", "pricing", "blog"];
+type NavigationProps = {
+  pageLinks: string[];
+};
+
+export default function Navigation({ pageLinks }: NavigationProps) {
   const [isActive, setIsActive] = useState(false);
   const [actualRoute, setActualRoute] = useState("");
 
@@ -15,13 +18,13 @@ export default function Navigation() {
     return setActualRoute(window.location.pathname.replace("/", ""));
   }, []);
 
-  const handleMenu = useCallback(() => {
+  const toggleMenu = () => {
     setIsActive(!isActive);
-  }, [isActive]);
+  };
 
   return (
     <nav className={styles.navigation}>
-      <HamburguerMenu isActive={isActive} setIsActive={() => handleMenu} />
+      <MobileMenuButton isActive={isActive} setIsActive={() => toggleMenu} />
       <ol
         className={
           isActive
@@ -29,7 +32,7 @@ export default function Navigation() {
             : styles.navigation__list
         }
       >
-        {linkToPages.map((link) => {
+        {pageLinks.map((link) => {
           return (
             <li className={styles.navigation__listItem} key={link}>
               <Link
@@ -42,7 +45,7 @@ export default function Navigation() {
                 }
                 href={"/" + link}
                 onClick={() => {
-                  handleMenu(), setActualRoute(link);
+                  toggleMenu(), setActualRoute(link);
                 }}
               >
                 {link}

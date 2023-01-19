@@ -1,4 +1,4 @@
-.HamburguerMenu__button {
+.MobileMenuButton {
   width: 48px;
   height: 48px;
   border: 1px solid rgba(255, 255, 255, 0.295743);
@@ -11,21 +11,21 @@
   transition: 0.4s ease-in-out;
 }
 
-.HamburguerMenu__button--active {
+.MobileMenuButton--active {
   background-color: var(--text-dark-accent);
   border-radius: 6px;
   transition: 0.5s ease-in-out;
   transform: rotate(90deg);
 }
 
-.HamburguerMenu__bar {
+.MobileMenuButton__bar {
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
   width: 16px;
 }
 
 @media screen and (min-width: 768px) {
-  .HamburguerMenu__button {
+  .MobileMenuButton {
     display: none;
   }
 }

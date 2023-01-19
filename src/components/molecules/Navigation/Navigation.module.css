@@ -38,6 +38,7 @@
 
 .navigation__link {
   text-decoration: none;
+  color: whitesmoke;
 }
 
 .navigation__link--active {
@@ -52,6 +53,7 @@
   padding: 18px 35px;
   border: 1px solid rgba(255, 255, 255, 0.295743);
   border-radius: 6px;
+  color: whitesmoke;
 }
 
 .contact__button:hover {
@@ -63,6 +65,7 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
+    width: 100%;
   }
   .navigation__list {
     display: none;

@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Logo width={152} height={48} />
-      <Navigation />
+      <Navigation pageLinks={["about", "services", "pricing", "blog"]} />
     </header>
   );
 }
