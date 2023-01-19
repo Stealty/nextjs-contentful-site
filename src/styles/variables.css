@@ -1,0 +1,9 @@
+:root {
+  --primary-color: #28293e;
+  --secondary-color: #fdf0e9;
+  --text-dark: #391400;
+  --text-dark-accent: #ef6d58;
+  --text-dark-gray: rgba(57, 20, 0, 0.64);
+  --text-light: #ffffff;
+  --text-light-gray: rgba(255, 255, 255, 0.64);
+}
