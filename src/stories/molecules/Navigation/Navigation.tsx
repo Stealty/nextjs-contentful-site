@@ -5,6 +5,7 @@ import Link from "next/link";
 import Button from "../../atoms/Button/Button";
 import { useEffect, useState } from "react";
 import MobileMenuButton from "../MobileMenuButton/MobileMenuButton";
+import { usePathname } from "next/navigation";
 
 type NavigationProps = {
   pageLinks: string[];
@@ -13,10 +14,11 @@ type NavigationProps = {
 export default function Navigation({ pageLinks }: NavigationProps) {
   const [isActive, setIsActive] = useState(false);
   const [actualRoute, setActualRoute] = useState("");
+  const pathname = usePathname() as unknown as string;
 
   useEffect(() => {
-    return setActualRoute(window.location.pathname.replace("/", ""));
-  }, []);
+    return setActualRoute(pathname.replace("/", ""));
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsActive(!isActive);

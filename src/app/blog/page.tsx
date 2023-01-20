@@ -39,7 +39,7 @@ export default async function Page() {
 
   const product = await client.getEntries<BlogPost>({ content_type: "post" });
 
-  console.log(product);
+  // console.log(product);
 
   return (
     <main>
