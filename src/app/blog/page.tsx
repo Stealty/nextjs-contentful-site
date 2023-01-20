@@ -4,7 +4,7 @@ import ArticleCard from "@/components/molecules/ArticleCard/ArticleCard";
 import Section from "@/components/Templates/Section/Section";
 import { createClient, EntryFields } from "contentful";
 
-type BlogPost = {
+interface BlogPost {
   image: {
     fields: {
       file: {
@@ -29,7 +29,7 @@ type BlogPost = {
       }
     ];
   };
-};
+}
 
 export default async function Page() {
   const client = createClient({
@@ -37,7 +37,7 @@ export default async function Page() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
   });
 
-  const product = await client.getEntries<BlogPost>("post");
+  const product = await client.getEntries<BlogPost>({ content_type: "post" });
 
   console.log(product);
 
@@ -52,17 +52,15 @@ export default async function Page() {
       </Section>
       {product.items.map((item) => {
         return (
-          item.fields.title && (
-            <Section bgColor="light" key={item.sys.id}>
-              <ArticleCard
-                image={"https:" + item.fields.image.fields.file.url}
-                alt={item.fields.image.fields.description}
-                category={item.fields.author.fields.name}
-                title={item.fields.title.content[0].content[0].value}
-                date={item.sys.createdAt}
-              />
-            </Section>
-          )
+          <Section bgColor="light" key={item.sys.id}>
+            <ArticleCard
+              image={"https:" + item.fields.image.fields.file.url}
+              alt={item.fields.image.fields.description}
+              category={item.fields.author.fields.name}
+              title={item.fields.title.content[0].content[0].value}
+              date={item.sys.createdAt}
+            />
+          </Section>
         );
       })}
     </main>
