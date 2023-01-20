@@ -1,0 +1,6 @@
+.paragraph {
+  color: var(--text-light-gray);
+  font-family: "Epilogue";
+  line-height: 32px;
+  text-align: center;
+}
