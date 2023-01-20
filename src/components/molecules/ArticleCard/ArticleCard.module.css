@@ -1,0 +1,29 @@
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.articleCard__image {
+  grid-area: img;
+  border-radius: 6px;
+}
+
+.articleCard__category {
+  grid-area: cat;
+  font-size: 1.25rem;
+  line-height: 32px;
+  color: var(--text-dark);
+}
+
+.articleCard__title {
+  grid-area: title;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  line-height: 32px;
+}
+
+.articleCard__date {
+  grid-area: date;
+  color: var(--text-dark);
+}
