@@ -8,9 +8,12 @@
 .articleCard__image {
   grid-area: img;
   border-radius: 6px;
+  max-width: 329px;
+  max-height: 224px;
+  position: unset !important;
 }
 
-.articleCard__category {
+.articleCard__author {
   grid-area: cat;
   font-size: 1.25rem;
   line-height: 32px;
@@ -34,9 +37,13 @@
     display: grid;
     justify-content: center;
     grid-template-areas:
-      "img cat"
       "img title"
+      "img cat"
       "img date";
     max-width: 720px;
+  }
+
+  .articleCard__image {
+    width: 329px !important;
   }
 }

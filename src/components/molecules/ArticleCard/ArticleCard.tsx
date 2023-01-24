@@ -6,7 +6,7 @@ import Title from "@/components/atoms/Title/Title";
 export type ArticleCardProps = {
   image: string;
   alt: string;
-  category: string;
+  author: string;
   title: string;
   date: string;
 };
@@ -14,7 +14,7 @@ export type ArticleCardProps = {
 export default function ArtcileCard({
   image,
   alt,
-  category,
+  author,
   title,
   date,
 }: ArticleCardProps) {
@@ -23,17 +23,20 @@ export default function ArtcileCard({
     month: "long",
     day: "numeric",
   });
+
   return (
     <div className={styles.articleCard}>
       <Image
         src={image}
-        width={329}
-        height={224}
+        // width={329}
+        // height={224}
+        fill
         alt={alt}
         className={styles.articleCard__image}
       />
-      <Paragraph text={category} className={styles.articleCard__category} />
+
       <Title text={title} className={styles.articleCard__title} />
+      <Paragraph text={author} className={styles.articleCard__author} />
       <time className={styles.articleCard__date} dateTime={formatedDate}>
         {formatedDate}
       </time>
