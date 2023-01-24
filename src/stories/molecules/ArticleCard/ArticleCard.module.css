@@ -37,8 +37,8 @@
     display: grid;
     justify-content: center;
     grid-template-areas:
-      "img title"
       "img cat"
+      "img title"
       "img date";
     max-width: 720px;
   }

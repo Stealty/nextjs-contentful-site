@@ -60,6 +60,10 @@
   background-color: var(--text-dark-accent);
 }
 
+.prevent-scroll {
+  overflow: scroll;
+}
+
 @media screen and (max-width: 767px) {
   .navigation {
     flex-direction: column;
@@ -69,6 +73,10 @@
   }
   .navigation__list {
     display: none;
+  }
+
+  .prevent-scroll {
+    overflow: hidden;
   }
 
   .navigation__list--active {
@@ -81,6 +89,7 @@
     align-items: flex-end;
     height: 100vh;
     animation: showMenu 0.5s ease-in-out;
+    z-index: 1;
   }
 
   .navigation__listItem {

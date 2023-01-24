@@ -19,6 +19,8 @@ export default function MobileMenuButton({
           ? styles.MobileMenuButton + " " + styles["MobileMenuButton--active"]
           : styles.MobileMenuButton
       }
+      aria-label="Navigation Menu"
+      aria-expanded={isActive}
     >
       <span className={styles.MobileMenuButton__bar}></span>
       <span className={styles.MobileMenuButton__bar}></span>
