@@ -17,7 +17,7 @@ export default function Navigation({ pageLinks }: NavigationProps) {
   const pathname = usePathname() as unknown as string;
 
   useEffect(() => {
-    return setActualRoute(pathname.replace("/", ""));
+    // return setActualRoute(pathname.replace("/", ""));
   }, [pathname]);
 
   const toggleMenu = () => {
@@ -45,7 +45,7 @@ export default function Navigation({ pageLinks }: NavigationProps) {
                       styles["navigation__link--active"]
                     : styles.navigation__link
                 }
-                href={"/" + link}
+                href={"#"}
                 onClick={() => {
                   toggleMenu(), setActualRoute(link);
                 }}
