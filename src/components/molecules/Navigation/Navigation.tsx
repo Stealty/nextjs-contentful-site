@@ -24,6 +24,9 @@ export default function Navigation({ pageLinks }: NavigationProps) {
 
   const toggleMenu = () => {
     setIsActive(!isActive);
+    !isActive
+      ? document.body.classList.add(styles["prevent-scroll"])
+      : document.body.classList.remove(styles["prevent-scroll"]);
   };
 
   return (
