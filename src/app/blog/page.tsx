@@ -56,7 +56,7 @@ export default async function Page() {
             <ArticleCard
               image={"https:" + item.fields.image.fields.file.url}
               alt={item.fields.image.fields.description}
-              category={item.fields.author.fields.name}
+              author={item.fields.author.fields.name}
               title={item.fields.title.content[0].content[0].value}
               date={item.sys.createdAt}
             />
