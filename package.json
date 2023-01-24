@@ -8,10 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.4",
     "@next/font": "13.1.2",
     "@types/next": "^9.0.0",
     "@types/node": "18.11.18",
@@ -21,6 +21,7 @@
     "contentful-management": "^10.26.0",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
+    "graphql": "^16.6.0",
     "next": "13.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -39,7 +40,8 @@
     "@storybook/react": "^6.5.15",
     "@storybook/testing-library": "^0.0.13",
     "babel-loader": "^8.3.0",
-    "contentful-typescript-codegen": "^3.4.0",
-    "eslint-plugin-storybook": "^0.6.10"
+    "eslint-plugin-storybook": "^0.6.10",
+    "storybook-addon-next": "^1.7.1",
+    "storybook-dark-mode": "^2.0.5"
   }
 }
