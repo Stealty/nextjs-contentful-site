@@ -4,4 +4,8 @@
   background-color: var(--primary-color);
   padding: 1.4rem 5.5%;
   align-items: center;
+  position: sticky;
+  width: 100%;
+  top: -1px;
+  left: 0;
 }
