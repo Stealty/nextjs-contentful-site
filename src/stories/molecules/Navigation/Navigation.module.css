@@ -9,31 +9,27 @@
   }
 }
 
-.navigation {
-  display: flex;
-  justify-content: center;
-  width: calc(100% - 152px);
-}
-
 .navigation__list {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   list-style-type: none;
   width: 100%;
+}
+
+.navigation__list--active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  top: 80px;
+  right: 0;
+  padding: 1.4rem 5.5%;
+  height: 100vh;
+  animation: showMenu 0.5s ease-in-out;
+  z-index: 1;
+  width: 100%;
   background-color: var(--primary-color);
-}
-
-.navigation__listItem:last-child {
-  text-align: end;
-}
-
-.navigation__listItem::first-letter {
-  text-transform: uppercase;
-}
-
-.navigation__listItem {
-  text-align: center;
 }
 
 .navigation__link {
@@ -41,12 +37,23 @@
   color: whitesmoke;
 }
 
+.navigation__link:hover {
+  color: var(--text-dark-accent);
+}
+
 .navigation__link--active {
   color: var(--text-dark-accent);
 }
 
-.navigation__link:hover {
-  color: var(--text-dark-accent);
+.navigation__listItem {
+  margin: 1rem 0;
+}
+
+.navigation__listItem::first-letter {
+  text-transform: uppercase;
+}
+
+.navigation__listItem:last-child {
 }
 
 .contact__button {
@@ -60,30 +67,35 @@
   background-color: var(--text-dark-accent);
 }
 
-@media screen and (max-width: 767px) {
+.prevent-scroll {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 767px) {
   .navigation {
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-  }
-  .navigation__list {
-    display: none;
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 152px);
   }
 
   .navigation__list--active {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    padding: 1.4rem 5.5%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    height: 100vh;
-    animation: showMenu 0.5s ease-in-out;
+    all: unset;
+  }
+
+  .navigation__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    list-style-type: none;
+    width: 100%;
+    background-color: var(--primary-color);
   }
 
   .navigation__listItem {
-    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .navigation__listItem:last-child {
+    text-align: end;
   }
 }
