@@ -14,14 +14,19 @@ type NavigationProps = {
 export default function Navigation({ pageLinks }: NavigationProps) {
   const [isActive, setIsActive] = useState(false);
   const [actualRoute, setActualRoute] = useState("");
-  const pathname = usePathname() as unknown as string;
 
   useEffect(() => {
-    // return setActualRoute(pathname.replace("/", ""));
-  }, [pathname]);
+    console.log(window.location.pathname);
+    if (window) setActualRoute(window.location.pathname.replace("/", ""));
+  }, [window]);
 
   const toggleMenu = () => {
-    setIsActive(!isActive);
+    if (window.innerWidth < 768) {
+      setIsActive(!isActive);
+      !isActive
+        ? document.body.classList.add(styles["prevent-scroll"])
+        : document.body.classList.remove(styles["prevent-scroll"]);
+    }
   };
 
   return (
@@ -45,7 +50,7 @@ export default function Navigation({ pageLinks }: NavigationProps) {
                       styles["navigation__link--active"]
                     : styles.navigation__link
                 }
-                href={"#"}
+                href={"/" + link}
                 onClick={() => {
                   toggleMenu(), setActualRoute(link);
                 }}

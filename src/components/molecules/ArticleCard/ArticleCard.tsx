@@ -35,7 +35,7 @@ export default function ArtcileCard({
         className={styles.articleCard__image}
       />
 
-      <Title text={title} className={styles.articleCard__title} />
+      <h2 className={styles.articleCard__title}>{title}</h2>
       <Paragraph text={author} className={styles.articleCard__author} />
       <time className={styles.articleCard__date} dateTime={formatedDate}>
         {formatedDate}

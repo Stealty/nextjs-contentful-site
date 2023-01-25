@@ -1,5 +1,5 @@
 import Logo from "@/components/atoms/Logo/Logo";
-import Navigation from "@/components/molecules/Navigation/Navigation";
+import Navigation from "../../molecules/Navigation/Navigation";
 import styles from "./Header.module.css";
 
 export default function Header() {
