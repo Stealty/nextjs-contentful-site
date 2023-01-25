@@ -4,8 +4,7 @@ import styles from "./Navigation.module.css";
 import Link from "next/link";
 import Button from "../../atoms/Button/Button";
 import { useEffect, useState } from "react";
-import MobileMenuButton from "@/components/molecules/MobileMenuButton/MobileMenuButton";
-import { usePathname } from "next/navigation";
+import MobileMenuButton from "../MobileMenuButton/MobileMenuButton";
 
 type NavigationProps = {
   pageLinks: string[];
@@ -14,19 +13,19 @@ type NavigationProps = {
 export default function Navigation({ pageLinks }: NavigationProps) {
   const [isActive, setIsActive] = useState(false);
   const [actualRoute, setActualRoute] = useState("");
-  const pathname = usePathname() as unknown as string;
 
   useEffect(() => {
-    if (window) {
-      return setActualRoute(pathname?.replace("/", ""));
-    }
-  }, [pathname]);
+    console.log(window.location.pathname);
+    if (window) setActualRoute(window.location.pathname.replace("/", ""));
+  }, [window]);
 
   const toggleMenu = () => {
-    setIsActive(!isActive);
-    !isActive
-      ? document.body.classList.add(styles["prevent-scroll"])
-      : document.body.classList.remove(styles["prevent-scroll"]);
+    if (window.innerWidth < 768) {
+      setIsActive(!isActive);
+      !isActive
+        ? document.body.classList.add(styles["prevent-scroll"])
+        : document.body.classList.remove(styles["prevent-scroll"]);
+    }
   };
 
   return (
